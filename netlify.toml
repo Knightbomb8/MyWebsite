@@ -1,0 +1,15 @@
+[build]
+  command = "npm install && npm run build"  # Adjust the build command as needed
+  functions = "server"  # Specify the directory containing serverless functions, if applicable
+  publish = "public"  # Specify the directory containing your static files or the output of your build process
+
+[dev]
+  command = "npm run start"  # Adjust the command to start your development server
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+[context.production.environment]
+  NODE_ENV = "production"
